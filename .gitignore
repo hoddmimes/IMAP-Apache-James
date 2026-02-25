@@ -1,24 +1,180 @@
-# Compiled class file
-*.class
+# Build artifacts
+target/
+dependency-reduced-pom.xml
+dockerfiles/run/**/*.lib
+dockerfiles/run/**/*.jar
+dockerfiles/run/**/keystore
+dockerfiles/run/**/glowroot
+.m2
+test-run.log
+build
 
-# Log file
+# Runtime data (generated when server runs)
+derby-store/
+lucene-index/
+var/
+segments.gen
+segments_*
 *.log
+derby.log
 
-# BlueJ files
-*.ctxt
+# Editor backup files
+*~
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# IDE
+.idea/
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+# Upstream project files not needed for IMAP server build
+.adr-dir
+.asf.yaml
+.gitattributes
+.scalafix.conf
+CHANGELOG.md
+Jenkinsfile
+LICENSE
+README.adoc
+james-logo.png
+checkstyle.xml
+checkstyle-suppressions.xml
+upgrade-instructions.md
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+# Top-level directories not needed for IMAP server build
+docs/
+examples/
+mpt/
+src/
+
+# backends-common: only jpa, cassandra, rabbitmq are needed
+backends-common/elasticsearch-v7/
+backends-common/pulsar/
+
+# event-bus: only api and in-vm are needed
+event-bus/cassandra/
+event-bus/distributed/
+
+# mailbox: cassandra, elasticsearch, backup, tika, scanning, spring not needed
+mailbox/backup/
+mailbox/cassandra/
+mailbox/elasticsearch-v7/
+mailbox/scanning-search/
+mailbox/spring/
+mailbox/tika/
+mailbox/plugin/deleted-messages-vault/
+mailbox/plugin/deleted-messages-vault-cassandra/
+mailbox/plugin/quota-mailing/
+mailbox/plugin/quota-mailing-cassandra/
+mailbox/plugin/quota-mailing-memory/
+mailbox/plugin/quota-search-elasticsearch-v7/
+mailbox/plugin/spamassassin/
+mailbox/tools/copier/
+mailbox/tools/jpa-migrator/
+
+# mailet: only api, test, mailetdocs-maven-plugin, base, amqp, standard are needed
+mailet/ai/
+mailet/crypto/
+mailet/icalendar/
+
+# metrics: metrics-logger not needed
+metrics/metrics-logger/
+
+# third-party: only spamassassin is needed
+third-party/linshare/
+
+# server/apps: only imap-app is needed
+server/apps/cassandra-app/
+server/apps/cli/
+server/apps/cli-integration-tests/
+server/apps/demo/
+server/apps/distributed-app/
+server/apps/distributed-pop3-app/
+server/apps/jpa-app/
+server/apps/jpa-smtp-app/
+server/apps/memory-app/
+server/apps/smtp-pulsar-cassandra-app/
+server/apps/spring-app/
+server/apps/webadmin-cli/
+
+# server/blob: aes, export, gc, s3 not needed
+server/blob/blob-aes/
+server/blob/blob-export-api/
+server/blob/blob-export-file/
+server/blob/blob-gc/
+server/blob/blob-s3/
+
+# server/container: spring, jmx, es-metric-reporter not needed
+server/container/mailbox-jmx/
+server/container/metrics/
+server/container/spring/
+
+# server/container/guice: cassandra, distributed, elasticsearch, jmx,
+# data-ldap, memory, sieve-file, mailrepository-cassandra, blob/* not needed
+server/container/guice/blob/
+server/container/guice/cassandra/
+server/container/guice/data-cassandra/
+server/container/guice/data-ldap/
+server/container/guice/distributed/
+server/container/guice/elasticsearch/
+server/container/guice/es-metric-reporter/
+server/container/guice/jmx/
+server/container/guice/mailbox-plugin-deleted-messages-vault/
+server/container/guice/mailbox-plugin-spamassassin/
+server/container/guice/mailrepository-cassandra/
+server/container/guice/memory/
+server/container/guice/queue/memory/
+server/container/guice/queue/pulsar/
+server/container/guice/queue/rabbitmq/
+server/container/guice/sieve-file/
+server/container/guice/testing/
+server/container/guice/protocols/jmap/
+server/container/guice/protocols/managedsieve/
+server/container/guice/protocols/webadmin-jmap/
+server/container/guice/protocols/webadmin-mail-over-web/
+server/container/guice/protocols/webadmin-mailbox/
+server/container/guice/protocols/webadmin-mailqueue/
+server/container/guice/protocols/webadmin-mailrepository/
+server/container/guice/protocols/webadmin-rabbitmq-mailqueue/
+
+# server/data: cassandra, jdbc, jmap, ldap not needed
+server/data/data-cassandra/
+server/data/data-jdbc/
+server/data/data-jmap/
+server/data/data-jmap-cassandra/
+server/data/data-ldap/
+
+# server/mailet: only dkim, mailetcontainer-api/impl, mailets needed
+server/mailet/integration-testing/
+server/mailet/mock-smtp-server/
+server/mailet/rate-limiter/
+server/mailet/rate-limiter-redis/
+server/mailet/remote-delivery-integration-testing/
+
+# server/mailrepository: only api and memory needed
+server/mailrepository/mailrepository-cassandra/
+
+# server/protocols: jmap, fetchmail, managesieve, pop3-distributed not needed
+server/protocols/fetchmail/
+server/protocols/jmap/
+server/protocols/jmap-draft/
+server/protocols/jmap-draft-integration-testing/
+server/protocols/jmap-rfc-8621/
+server/protocols/jmap-rfc-8621-integration-tests/
+server/protocols/protocols-managesieve/
+server/protocols/protocols-pop3-distributed/
+server/protocols/webadmin-integration-test/
+server/protocols/webadmin/webadmin-cassandra/
+server/protocols/webadmin/webadmin-cassandra-data/
+server/protocols/webadmin/webadmin-jmap/
+server/protocols/webadmin/webadmin-mailbox/
+server/protocols/webadmin/webadmin-mailbox-deleted-message-vault/
+server/protocols/webadmin/webadmin-mail-over-web/
+server/protocols/webadmin/webadmin-mailqueue/
+server/protocols/webadmin/webadmin-mailrepository/
+server/protocols/webadmin/webadmin-pop3/
+server/protocols/webadmin/webadmin-rabbitmq/
+
+# server/queue: only api, memory, jms, activemq needed
+server/queue/queue-pulsar/
+server/queue/queue-rabbitmq/
+
+# server/task: only api, json, memory needed
+server/task/task-distributed/
