@@ -31,8 +31,6 @@
 
     <modules>
         <module>api</module>
-        <module>cassandra</module>
-        <module>distributed</module>
         <module>in-vm</module>
     </modules>
 </project>

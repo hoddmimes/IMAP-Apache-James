@@ -35,7 +35,6 @@
     <modules>
         <module>metrics-api</module>
         <module>metrics-dropwizard</module>
-        <module>metrics-logger</module>
         <module>metrics-tests</module>
     </modules>
 

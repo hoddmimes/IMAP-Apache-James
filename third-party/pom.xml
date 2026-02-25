@@ -34,7 +34,6 @@
     <inceptionYear>2018</inceptionYear>
 
     <modules>
-        <module>linshare</module>
         <module>spamassassin</module>
     </modules>
 </project>

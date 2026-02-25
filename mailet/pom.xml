@@ -45,12 +45,9 @@
     </mailingLists>
 
     <modules>
-        <module>ai</module>
         <module>amqp</module>
         <module>api</module>
         <module>base</module>
-        <module>crypto</module>
-        <module>icalendar</module>
         <module>mailetdocs-maven-plugin</module>
         <module>standard</module>
         <module>test</module>

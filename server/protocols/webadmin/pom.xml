@@ -33,19 +33,9 @@
     <name>Apache James :: Server :: Web Admin</name>
 
     <modules>
-        <module>webadmin-cassandra</module>
-        <module>webadmin-cassandra-data</module>
         <module>webadmin-core</module>
         <module>webadmin-data</module>
         <module>webadmin-dropwizard-metrics</module>
-        <module>webadmin-jmap</module>
-        <module>webadmin-mail-over-web</module>
-        <module>webadmin-mailbox</module>
-        <module>webadmin-mailbox-deleted-message-vault</module>
-        <module>webadmin-mailqueue</module>
-        <module>webadmin-mailrepository</module>
-        <module>webadmin-pop3</module>
-        <module>webadmin-rabbitmq</module>
     </modules>
 
 </project>

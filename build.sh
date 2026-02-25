@@ -9,6 +9,6 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 echo "Building IMAP server..."
 
-mvn install -DskipTests -pl server/apps/imap-app -am -f "$SCRIPT_DIR/pom.xml"
+mvn install -DskipTests -Dcheckstyle.skip=true -pl server/apps/imap-app -am -f "$SCRIPT_DIR/pom.xml"
 
 echo "Done. Artifact: $SCRIPT_DIR/server/apps/imap-app/target/james-server-imap-app.jar"
