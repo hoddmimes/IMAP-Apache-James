@@ -16,6 +16,7 @@ if [ ! -f "$JAR" ]; then
 fi
 
 sudo java \
+    -Djava.net.preferIPv4Stack=true \
     -Dworking.directory="$WORKING_DIR" \
     -Dlogback.configurationFile="$LOGBACK_FILE" \
     -javaagent:"$OPENJPA_JAR" \

@@ -25,7 +25,7 @@
     "lucenePath": "lucene-index"
   },
   "userSync": {
-      "url": "https://127.0.0.1:8282/api/users",
+      "url": "https://127.0.0.1:443/api/users",
     "retryIntervalSeconds": 10,
     "maxRetries": -1
   }
