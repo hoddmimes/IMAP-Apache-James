@@ -3,7 +3,9 @@
   "workingDirectory": ".",
   "imap": {
     "bind": "0.0.0.0",
-    "port": 993,
+    "port": 1993,
+    "plainBind": "0.0.0.0",
+    "plainPort": 1143,
     "tls": {
       "keystore": "file:///usr/local/imap-james/keystore.p12",
       "keystoreType": "PKCS12",
