@@ -1,0 +1,34 @@
+{
+  "domain": "#MAIL_DOMAIN#",
+  "workingDirectory": ".",
+  "imap": {
+    "bind": "0.0.0.0",
+    "port": 993,
+    "plainBind": "0.0.0.0",
+    "plainPort": 143,
+    "tls": {
+      "keystore": "file://#INSTALL_DIR#/keystore.p12",
+      "keystoreType": "PKCS12",
+      "secret": "changeit"
+    }
+  },
+  "lmtp": {
+    "bind": "127.0.0.1",
+    "port": 24
+  },
+  "webadmin": {
+    "bind": "127.0.0.1",
+    "port": 8000,
+    "user": "admin",
+    "password": "will-be-set-by-ice-server-at-initial-sync"
+  },
+  "database": {
+    "derbyPath": "derby-store",
+    "lucenePath": "lucene-index"
+  },
+  "userSync": {
+      "url": "https://#ICE_SERVER_HOST#/api/users",
+    "retryIntervalSeconds": 10,
+    "maxRetries": -1
+  }
+}

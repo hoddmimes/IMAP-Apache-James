@@ -59,7 +59,7 @@
             <groupId>${james.groupId}</groupId>
             <artifactId>james-server-guice-common</artifactId>
         </dependency>
-<dependency>
+        <dependency>
             <groupId>${james.groupId}</groupId>
             <artifactId>james-server-guice-imap</artifactId>
         </dependency>
@@ -147,7 +147,7 @@
                             <archive>
                                 <manifest>
                                     <addClasspath>true</addClasspath>
-                                    <classpathPrefix>${project.artifactId}.lib/</classpathPrefix>
+                                    <classpathPrefix>ice-imap-app.lib/</classpathPrefix>
                                     <mainClass>org.apache.james.MinimalImapServerMain</mainClass>
                                     <useUniqueVersions>false</useUniqueVersions>
                                 </manifest>
@@ -162,6 +162,27 @@
                                     <url>https://james.apache.org/server</url>
                                 </manifestEntries>
                             </archive>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-to-release</id>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <phase>package</phase>
+                        <configuration>
+                            <target>
+                                <copy file="${project.build.directory}/${project.artifactId}.jar" overwrite="true" tofile="${project.basedir}/../../../build-release/release/ice-imap-app.jar" />
+                                <copy overwrite="true" todir="${project.basedir}/../../../build-release/release/ice-imap-app.lib">
+                                    <fileset dir="${project.build.directory}/${project.artifactId}.lib" />
+                                </copy>
+                            </target>
                         </configuration>
                     </execution>
                 </executions>
