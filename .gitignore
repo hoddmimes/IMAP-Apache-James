@@ -27,7 +27,6 @@ derby.log
 # Upstream project files not needed for IMAP server build
 .adr-dir
 .asf.yaml
-.gitattributes
 .scalafix.conf
 CHANGELOG.md
 Jenkinsfile
